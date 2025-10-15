@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 //SERVICIOS REGISTRADOS CORRECTAMENTE
 builder.Services.AddSingleton<AppDbContext>();
-IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddAutoMapper(typeof(MappingConfig));
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

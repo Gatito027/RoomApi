@@ -1,18 +1,14 @@
-﻿// Profiles/AutoMapperProfile.cs
-using AutoMapper;
+﻿using AutoMapper;
+using RoomApi.Models;
 using RoomApi.Models.Dto;
 
 namespace RoomApi
 {
-    public class MappingConfig
+    public class MappingConfig : Profile
     {
-        public static MapperConfiguration RegisterMaps()
+        public MappingConfig()
         {
-            var mappingConfig = new MapperConfiguration();
-            mappingConfig.CreateMap<RoomDto, Models.Room>().ReverseMap();
-            return mappingConfig;
+            CreateMap<Room, RoomDto>().ReverseMap();
         }
     }
-    // Ejemplo de mapeo si necesitas mapear entre entidades
-    //CreateMap<Room, RoomDto>().ReverseMap();
 }
