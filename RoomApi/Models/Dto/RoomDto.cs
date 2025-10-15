@@ -25,5 +25,8 @@ namespace RoomApi.Models.Dto
         public string UserId { get; set; }
 
         public string Ubicacion { get; set; }
+        public List<IFormFile>? NuevasImagenes { get; set; }
+        public List<string>? ImagenesAEliminar { get; set; }
+
     }
 }
